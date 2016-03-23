@@ -1,4 +1,4 @@
-package com.mateus.main;
+package com.test;
 
 import java.io.IOException;
 
