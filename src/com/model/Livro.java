@@ -12,6 +12,7 @@ public class Livro {
     private int ano;
     private String edicao;
     private String descricaoFisica;
+    private int quantidadeDisponivel;
     private Disponibilidade disponibilidade;
 
     public String getTitulo() {
@@ -23,7 +24,7 @@ public class Livro {
     }
 
     public Autor getAutor() {
-        return autor;
+        return autor == null ? new Autor("") : autor;
     }
 
     public void setAutor(Autor autor) {
@@ -39,7 +40,7 @@ public class Livro {
     }
 
     public Editor getEditor() {
-        return editor;
+    	return editor == null ? new Editor("") : editor;
     }
 
     public void setEditor(Editor editor) {
@@ -69,9 +70,18 @@ public class Livro {
     public void setDescricaoFisica(String descricaoFisica) {
         this.descricaoFisica = descricaoFisica;
     }
+    
 
-    public Disponibilidade getDisponibilidade() {
-        return disponibilidade;
+    public int getQuantidadeDisponivel() {
+		return quantidadeDisponivel;
+	}
+
+	public void setQuantidadeDisponivel(int quantidadeDisponivel) {
+		this.quantidadeDisponivel = quantidadeDisponivel;
+	}
+
+	public Disponibilidade getDisponibilidade() {
+    	return disponibilidade == null ? new Disponibilidade() : disponibilidade;
     }
 
     public void setDisponibilidade(Disponibilidade disponibilidade) {

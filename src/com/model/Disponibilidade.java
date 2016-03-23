@@ -1,6 +1,8 @@
 package com.model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -8,18 +10,25 @@ import java.util.Map;
  */
 public class Disponibilidade {
 
-    private Map<Local, Integer> locais;
+    private ArrayList<HashMap<String, Integer>> locais;
 
-    public Disponibilidade(Local local, int qtdeLivros){
-        this.locais = new HashMap<Local, Integer>();
-        this.locais.put(local, qtdeLivros);
+    public Disponibilidade(){
+        this.locais = new ArrayList<HashMap<String, Integer>>();
     }
 
-    public Map<Local, Integer> getLocais() {
+    public ArrayList<HashMap<String, Integer>> getLocais() {
         return locais;
     }
 
-    public void setLocais(Map<Local, Integer> locais) {
+    public void setLocais(ArrayList<HashMap<String, Integer>> locais) {
         this.locais = locais;
     }
+    
+    public void add(String local, String qt){
+    	HashMap hash = new HashMap<String, Integer>();
+    	int qtde = Integer.parseInt(qt);
+    	hash.put(local, qtde);
+    	this.locais.add(hash);
+    }
+  
 }

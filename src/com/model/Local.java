@@ -1,5 +1,7 @@
 package com.model;
 
+import java.util.Objects;
+
 /**
  * Created by Mateus on 19/03/2016.
  */
@@ -27,5 +29,35 @@ public class Local {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+    public int hashCode()
+    {
+        int hash = 3;
+        hash = 37 * hash + Objects.hashCode(this.nome);
+        hash = 37 * hash + Objects.hashCode(this.sigla);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == null)
+        {
+            return false;
+        }
+        if (getClass() != obj.getClass())
+        {
+            return false;
+        }
+        final Local other = (Local) obj;
+        if (!Objects.equals(this.nome, other.sigla))
+        {
+            return false;
+        }
+        if (!Objects.equals(this.nome, other.sigla))
+        {
+            return false;
+        }
+        return true;
     }
 }
